@@ -18,3 +18,5 @@ This would cause a lot of overhead while changing the password. Hence a passphra
 
 Note: While testing this program, please create two empty files, in the same folder as the program, namely "key.txt" and "encry.txt".
 I will try to automate this process in the next version of the code.
+
+Don't run the code in background unless you know how to kill it manually. You might have to restart your system to unmount if you aren't sure about killing the process.
