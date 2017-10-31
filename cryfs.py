@@ -202,7 +202,7 @@ def changePassword():
         cf=open("encry.txt",'r')
         pphrase=cf.read().strip()
         cf.close()
-        enc2Obj=AESCipher(psswd)
+        enc2Obj=AESCipher(opsswd)
         pphrase=enc2Obj.decrypt(pphrase)
         npsswd=raw_input("Enter the new password: ").strip()
         if npsswd == raw_input("Enter the new password again: ").strip():
@@ -213,7 +213,7 @@ def changePassword():
             enc2Obj=AESCipher(npsswd) 
             pphrase=enc2Obj.encrypt(pphrase)
             cf=open("encry.txt",'w')
-            cf=write(pphrase)
+            cf.write(pphrase)
             cf.close()
         else:
             print "Passwords don't match!"
