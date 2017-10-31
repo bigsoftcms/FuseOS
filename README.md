@@ -20,3 +20,5 @@ Note: While testing this program, please create two empty files, in the same fol
 I will try to automate this process in the next version of the code.
 
 Don't run the code in background unless you know how to kill it manually. You might have to restart your system to unmount if you aren't sure about killing the process.
+
+Update: I tried testing the password change feature. It doesn't work properly. It shall be fixed soon.
