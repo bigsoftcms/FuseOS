@@ -1,6 +1,6 @@
 # FuseOS
 
-An encrypted filesystem using FUSE in Python
+An encrypted filesystem using FUSE in Python.
 All writes are encrypted and all reads are decrypted.
 
 A random string of 30 characters is generated initially. This is the passphrase.
