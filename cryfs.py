@@ -11,7 +11,6 @@ import random, string
 def randomword(length):
    return ''.join(random.choice(string.lowercase) for i in range(length))
 
-
 class AESCipher(object):
 
     def __init__(self, key): 
@@ -166,8 +165,9 @@ def createPassword():
     if psswd == raw_input("Enter the new password again: ").strip():
         hash_obj=hashlib.md5(psswd)
         enc2Obj=AESCipher(psswd)
-        cf=open("encry.txt",'w')
-        pphrase=enc2Obj.encrypt(randomword(30))
+        cf=open("encry.txt",'w+')
+        pphrase=randomword(30)
+        pphrase=enc2Obj.encrypt(pphrase)
         cf.write(pphrase)
         cf.close()
         f=open("key.txt",'w')
@@ -178,7 +178,7 @@ def createPassword():
         createPassword()
 
 def checkPassword():
-    f=open("key.txt",'r')
+    f=open("key.txt",'r+')
     key=f.read().strip()
     f.close()
     if key=="":
@@ -242,5 +242,6 @@ while True:
         pphrase=enc2Obj.decrypt(pphrase)
         cryObj=AESCipher(pphrase)
         createmount(sys.argv[2], sys.argv[1])
+        break
     else:
         print "Wrong password"
